@@ -17,7 +17,7 @@ import java.util.HashSet;
 import javax.annotation.Nullable;
 
 public class AppProtocol {
-    public static final String UBER_PACKAGE_NAME = "com.ubercab";
+    public static final String UBER_PACKAGE_NAME = "com.ubercab.disabled";
     public static final String DEEPLINK_SCHEME = "uber";
     public static final String PLATFORM = "android";
 
