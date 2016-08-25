@@ -162,7 +162,7 @@ dependencies {
         exclude module: 'google-http-client-jackson2'
     }
 
-    compile 'com.android.support:appcompat-v7:24.1.1'
+    compile 'com.android.support:appcompat-v7:24.2.0'
 
     //Needed for runtime annotation preservation in Moshi
     //Will require Java SDK updates to remove safely
