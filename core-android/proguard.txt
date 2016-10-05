@@ -1,3 +1,5 @@
+-keepattributes EnclosingMethod
+
 # OkHttp 3
 -keepattributes Signature
 -keepattributes *Annotation*
