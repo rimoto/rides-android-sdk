@@ -17,11 +17,11 @@ import java.util.HashSet;
 import javax.annotation.Nullable;
 
 public class AppProtocol {
-    public static final String UBER_PACKAGE_NAME = "com.ubercab.disabled";
-    public static final String DEEPLINK_SCHEME = "uber";
+    public static final String UBER_PACKAGE_NAME = "com.ubercab.disabled.no";
+    public static final String DEEPLINK_SCHEME = "uber-disabled";
     public static final String PLATFORM = "android";
 
-    private static final String UBER_RIDER_HASH = "411c40b31f6d01dac68d711df99b6eafeec8e73b";
+    private static final String UBER_RIDER_HASH = "411c40b31f6d01dac68d711df99b6eafeec8e73b-no";
     private static final String HASH_ALGORITHM_SHA1 = "SHA-1";
 
     private static final HashSet<String> validAppSignatureHashes = buildAppSignatureHashes();
