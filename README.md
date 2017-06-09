@@ -20,7 +20,7 @@ To use the Uber Rides Android SDK, add the compile dependency with the latest ve
 Add the Uber Rides Android SDK to your `build.gradle`:
 ```gradle
 dependencies {
-    compile 'com.uber.sdk:rides-android:0.5.3'
+    compile 'com.uber.sdk:rides-android:0.6.1'
 }
 ```
 
@@ -31,7 +31,7 @@ In the `pom.xml` file:
 <dependency>
     <groupId>com.uber.sdk</groupId>
     <artifactId>rides-android</artifactId>
-    <version>0.5.3</version>
+    <version>0.6.1</version>
 </dependency>
 ```
 
@@ -118,6 +118,8 @@ requestButton.setRequestBehavior(new RideRequestActivityBehavior(this, REQUEST_C
 
 That's it! With this configuration, when a user clicks on the request button, an activity will be launched that contains a login view (on first launch) where the user can authorize your app. After authorization, this activity will contain the Ride Request View. If any unexpected errors occur that the SDK can't handle, the activity will finish with an error in the result Intent using either the key `RideRequestActivity.AUTHENTICATION_ERROR` or `RideRequestActivity.RIDE_REQUEST_ERROR` depending on where the error occurred.
 
+> **Note:** The environment ([sandbox](https://developer.uber.com/docs/rides/sandbox) or production) is considered by the Ride Request Widget. If you use the sample source code from above, your calls will be issued to the Sandbox. The widget will display a `sandbox` badge to indicate that. To change the mode, set environment to `Environment.PRODUCTION`.
+
 ## Ride Request Button with ETA and price
 To further enhance the button with destination and price information, add a Session to it and call `loadRideInformation()` function.
 
@@ -155,7 +157,7 @@ RideRequestButtonCallback callback = new RideRequestButtonCallback() {
 
 requestButton.setRideParameters(rideParams);
 requestButton.setSession(session);
-requestButton.setCallback(callback));
+requestButton.setCallback(callback);
 requestButton.loadRideInformation();
 ```
 
@@ -165,7 +167,7 @@ If you want to provide a more custom experience in your app, there are a few cla
 ### Login
 The Uber SDK allows for three login flows: Implicit Grant (local web view), Single Sign On with the Uber App, and Authorization Code Grant (requires a backend to catch the local web view redirect and complete OAuth).
 
-To use Single Sign On you must register a hash of your application's signing certificate in the Application Signature section of the [developer dashboard] (https://developer.uber.com/dashboard).
+To use Single Sign On you must register a hash of your application's signing certificate in the Application Signature section of the [developer dashboard](https://developer.uber.com/dashboard).
 
 To get the hash of your signing certificate, run this command with the alias of your key and path to your keystore:
 
@@ -317,7 +319,7 @@ service.getUserProfile().enqueue(new Callback<UserProfile>() {
 
 ## Sample Apps
 
-Sample apps can be found in the `samples` folder. Alternatively, you can also download a sample from the [releases page](https://github.com/uber/rides-android-sdk/releases/tag/v0.5.3).
+Sample apps can be found in the `samples` folder. Alternatively, you can also download a sample from the [releases page](https://github.com/uber/rides-android-sdk/releases/tag/v0.6.1).
 
 The Sample apps require configuration parameters to interact with the Uber API, these include the client id, redirect uri, and server token. They are provided on the [Uber developer dashboard](https://developer.uber.com/dashboard).
 
@@ -346,7 +348,5 @@ As the Uber Android SDK get closer to a 1.0 release, the API's will become more 
 ## Contributing
 
 We :heart: contributions. Found a bug or looking for a new feature? Open an issue and we'll respond as fast as we can. Or, better yet, implement it yourself and open a pull request! We ask that you include tests to show the bug was fixed or the feature works as expected.
-
-**Note:** All contributors also need to fill out the [Uber Contributor License Agreement](http://t.uber.com/cla) before we can merge in any of your changes.
 
 ## MIT Licensed
